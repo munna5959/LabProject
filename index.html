@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matrix Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Matrix Calculator</h2>
+
+  <div class="inputs">
+    <textarea id="matrixA" placeholder="Enter Matrix A (e.g. 1 2\n3 4)"></textarea>
+    <textarea id="matrixB" placeholder="Enter Matrix B (e.g. 5 6\n7 8)"></textarea>
+  </div>
+
+  <div class="buttons">
+    <button onclick="calculate('add')">Add</button>
+    <button onclick="calculate('sub')">Subtract</button>
+    <button onclick="calculate('mul')">Multiply</button>
+  </div>
+
+  <h3>Result:</h3>
+  <pre id="result"></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
