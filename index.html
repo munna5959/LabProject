@@ -2,26 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Matrix Calculator</title>
+  <title>Smart Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h2>Matrix Calculator</h2>
+  <h1>Smart Calculator</h1>
 
-  <div class="inputs">
-    <textarea id="matrixA" placeholder="Enter Matrix A (e.g. 1 2\n3 4)"></textarea>
-    <textarea id="matrixB" placeholder="Enter Matrix B (e.g. 5 6\n7 8)"></textarea>
+  <div class="mode-switch">
+    <button onclick="setMode('normal')">Normal</button>
+    <button onclick="setMode('matrix')">Matrix</button>
   </div>
 
-  <div class="buttons">
-    <button onclick="calculate('add')">Add</button>
-    <button onclick="calculate('sub')">Subtract</button>
-    <button onclick="calculate('mul')">Multiply</button>
+  <div id="normalCalc" class="mode">
+    <input id="display" readonly>
   </div>
 
-  <h3>Result:</h3>
+  <div id="matrixCalc" class="mode hidden">
+    <div class="matrix-box">
+      <textarea id="matrixA" placeholder="Matrix A"></textarea>
+      <textarea id="matrixB" placeholder="Matrix B"></textarea>
+    </div>
+
+    <div class="matrix-actions">
+      <button onclick="calculate('add')">A+B</button>
+      <button onclick="calculate('sub')">A-B</button>
+      <button onclick="calculate('mul')">A×B</button>
+      <button onclick="transpose() ">Trans</button>
+      <button onclick="determinant()">Det</button>
+    </div>
+  </div>
+
+  <!-- KEYPAD -->
+  <div class="keypad">
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button onclick="press('/')">÷</button>
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button onclick="press('*')">×</button>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button onclick="press('-')">−</button>
+
+    <button onclick="press('0')">0</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="press(' ')">␣</button>
+    <button onclick="press('+')">+</button>
+
+    <button onclick="newRow()">↵ Row</button>
+    <button onclick="clearAll()">C</button>
+    <button onclick="backspace()">⌫</button>
+    <button onclick="calculateNormal()">=</button>
+  </div>
+
   <pre id="result"></pre>
 </div>
 
